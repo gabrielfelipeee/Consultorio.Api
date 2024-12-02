@@ -1,0 +1,13 @@
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Service.deps.json
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Service.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Service.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.csproj.AssemblyReference.cache
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.AssemblyInfoInputs.cache
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.AssemblyInfo.cs
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.csproj.CoreCompileInputs.cache
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.sourcelink.json
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/refint/Service.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/ref/Service.dll
