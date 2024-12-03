@@ -1,0 +1,23 @@
+using Api.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Api.Data.Context
+{
+    public class MyContext : DbContext
+    {
+        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        { }
+
+        public DbSet<AppointmentEntity> Appointments { get; set; }
+        public DbSet<SpecialtyEntity> Specialties { get; set; }
+        public DbSet<PatientEntity> Patients { get; set; }
+        public DbSet<ProfessionalEntity> Professionals { get; set; }
+        public DbSet<ProfessionalSpecialtyEntity> ProfessionalsSpecialties { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            // Garante que as configurações padrões de mapeamento do sejam preservadas
+            base.OnModelCreating(builder);
+        }
+    }
+}

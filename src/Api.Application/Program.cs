@@ -1,3 +1,5 @@
+using Api.CrossCutting.DependencyInjection;
+
 namespace Api.Application
 {
     public class Program
@@ -9,6 +11,9 @@ namespace Api.Application
             builder.Services.AddSwaggerGen();
             builder.Services.AddControllers();
 
+            // Configurações de injeção de dependências
+            ConfigureRepoitory.ConfigureDependenciesRepository(builder.Services);
+            ConfigureService.ConfigureDependenciesServices(builder.Services);
 
             var app = builder.Build();
 

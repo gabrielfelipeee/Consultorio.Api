@@ -1,0 +1,12 @@
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/bin/Debug/net8.0/Domain.deps.json
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/bin/Debug/net8.0/Domain.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/bin/Debug/net8.0/Domain.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/Domain.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Domain/obj/Debug/net8.0/ref/Domain.dll

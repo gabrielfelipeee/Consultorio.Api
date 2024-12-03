@@ -13,3 +13,6 @@
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Data/obj/Debug/net8.0/Data.pdb
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Data/obj/Debug/net8.0/Data.genruntimeconfig.cache
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Data/obj/Debug/net8.0/ref/Data.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Data/bin/Debug/net8.0/Domain.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Data/bin/Debug/net8.0/Domain.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Data/obj/Debug/net8.0/Data.csproj.CopyComplete

@@ -11,3 +11,8 @@
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/refint/Service.dll
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.pdb
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/ref/Service.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Data.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Domain.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Data.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/bin/Debug/net8.0/Domain.pdb
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/obj/Debug/net8.0/Service.csproj.CopyComplete
