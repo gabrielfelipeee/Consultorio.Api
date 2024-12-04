@@ -1,3 +1,4 @@
+using Api.Data.Mappings;
 using Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,12 @@ namespace Api.Data.Context
         {
             // Garante que as configurações padrões de mapeamento do sejam preservadas
             base.OnModelCreating(builder);
+
+
+            builder.Entity<AppointmentEntity>(new AppointmentMap().Configure);
+            builder.Entity<PatientEntity>(new PatientMap().Configure);
+            builder.Entity<ProfessionalEntity>(new ProfessionalMap().Configure);
+            builder.Entity<SpecialtyEntity>(new SpecialtyMap().Configure);
         }
     }
 }

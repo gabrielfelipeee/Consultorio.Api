@@ -1,6 +1,6 @@
 namespace Api.Domain.Entities
 {
-    public class ProfessionalSpecialtyEntity : BaseEntity
+    public class ProfessionalSpecialtyEntity
     {
         public int ProfessionalId { get; set; }
         public ProfessionalEntity Professional { get; set; }
