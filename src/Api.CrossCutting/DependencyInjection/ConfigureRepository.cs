@@ -10,7 +10,7 @@ namespace Api.CrossCutting.DependencyInjection
         {
             var connectionString = "Server=localhost;Port=3306;Database=consultorio;Uid=root;Pwd=14589632@Gg";
 
-            services.AddDbContext<MyContext>(options =>
+            services.AddDbContext<ConsultorioContext>(options =>
             {
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             });

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Data.Context
 {
-    public class MyContext : DbContext
+    public class ConsultorioContext : DbContext
     {
-        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        public ConsultorioContext(DbContextOptions<ConsultorioContext> options) : base(options)
         { }
 
         public DbSet<AppointmentEntity> Appointments { get; set; }
