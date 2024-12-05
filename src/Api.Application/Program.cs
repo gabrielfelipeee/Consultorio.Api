@@ -9,7 +9,10 @@ namespace Api.Application
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
 
             // Configurações de injeção de dependências
             ConfigureRepoitory.ConfigureDependenciesRepository(builder.Services);
@@ -23,6 +26,7 @@ namespace Api.Application
                 app.UseSwaggerUI();
             }
             app.UseHttpsRedirection();
+            app.MapControllers();
 
             app.Run();
         }

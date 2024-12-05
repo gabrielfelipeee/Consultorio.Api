@@ -7,9 +7,9 @@ namespace Api.Service.Services
 {
     public class PatientService : IPatientService
     {
-        private readonly IRepository<PatientEntity> _repository;
+        private readonly IPatientRepository _repository;
         private readonly IValidator<PatientEntity> _validator;
-        public PatientService(IRepository<PatientEntity> repository, IValidator<PatientEntity> validator)
+        public PatientService(IPatientRepository repository, IValidator<PatientEntity> validator)
         {
             _repository = repository;
             _validator = validator;
@@ -26,13 +26,12 @@ namespace Api.Service.Services
 
         public async Task<List<PatientEntity>> GetAllAsync()
         {
-            var patients = await _repository.SelectAllAsync();
-            return patients;
+            return await _repository.SelectAllWithAppointmentsAsync();
         }
+
         public async Task<PatientEntity> GetByIdAsync(int id)
         {
-            var patient = await _repository.SelectByIdAsync(id);
-            return patient;
+            return await _repository.SelectByIdWithAppointmentsAsync(id);
         }
         public async Task<PatientEntity> PostAsync(PatientEntity patient)
         {

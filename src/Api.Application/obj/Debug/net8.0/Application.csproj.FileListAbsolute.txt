@@ -46,3 +46,8 @@
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/CrossCutting.pdb
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/Data.pdb
 /home/gabriel/Desktop/Consultorio.Api/src/Api.Application/obj/Debug/net8.0/Application.sourcelink.json
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/FluentValidation.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
