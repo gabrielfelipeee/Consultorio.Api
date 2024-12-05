@@ -8,7 +8,7 @@ namespace Api.Data.Repository
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly ConsultorioContext _consultorioContext;
-        private readonly DbSet<T> _dataset;
+        protected readonly DbSet<T> _dataset;
         public BaseRepository(ConsultorioContext consultorioContext)
         {
             _consultorioContext = consultorioContext;

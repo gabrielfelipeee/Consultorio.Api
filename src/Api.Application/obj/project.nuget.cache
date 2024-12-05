@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qZbdalza+/0E9wmd2LYlm791V4HkKCGQ9OEjsne2ZtTnuAOePa+WaKjj7hlgxZ1c+V5WH4gyJT/y841laEVjPw==",
+  "dgSpecHash": "dyBWWeHILqQpx68C2VdchD8ZnFhQNosMXsDwi7wYlXchcb7bmyowRV+OjEIL0Wn794NhknCrxMuRQWSmOBlZ/Q==",
   "success": true,
   "projectFilePath": "/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/Application.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.aspnetcore.openapi/8.0.10/microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore/8.0.0/microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.0/microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
