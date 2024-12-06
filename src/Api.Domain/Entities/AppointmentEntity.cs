@@ -2,7 +2,7 @@ namespace Api.Domain.Entities
 {
     public class AppointmentEntity : BaseEntity
     {
-        public DateTime ApppointmentDateTime { get; set; }
+        public DateTime AppointmentDateTime { get; set; }
         public int Status { get; set; }
         public decimal Price { get; set; }
         public int PatientId { get; set; }

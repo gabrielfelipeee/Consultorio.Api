@@ -15,7 +15,7 @@ namespace Api.Data.Mappings
             // Chama o método Configure da classe base para aplicar o mapeamento genérico
             base.Configure(builder);
 
-            builder.Property(x => x.ApppointmentDateTime)
+            builder.Property(x => x.AppointmentDateTime)
                    .HasColumnName("appointment_datetime");
             builder.Property(x => x.Status)
                    .HasColumnName("status")
