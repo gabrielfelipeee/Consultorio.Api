@@ -1,11 +1,11 @@
-using Api.Domain.Entities;
+using Api.Domain.Dtos.Patient;
 using FluentValidation;
 
 namespace Api.Service.Validators
 {
-    public class PatientValidator : AbstractValidator<PatientEntity>
+    public class PatientBaseValidator<T> : AbstractValidator<T> where T : PatientBaseDto
     {
-        public PatientValidator()
+        public PatientBaseValidator()
         {
             RuleFor(p => p.Name)
                 .NotEmpty().WithMessage("O nome do paciente é obrigatório.")
@@ -14,7 +14,7 @@ namespace Api.Service.Validators
 
             RuleFor(p => p.Cpf)
                 .NotEmpty().WithMessage("O CPF do paciente é obrigatório.")
-                .Length(11).WithMessage("O CPF deve conter exatamente 11 dígitos.")
+                .Length(11).WithMessage("O CPF fornecido não é válido.")
                 .Matches(@"^\d{11}$").WithMessage("O CPF deve conter apenas números.");
 
             RuleFor(p => p.Email)
@@ -24,7 +24,7 @@ namespace Api.Service.Validators
 
             RuleFor(p => p.Telephone)
                 .NotEmpty().WithMessage("O telefone do paciente é obrigatório.")
-                .Matches(@"^\d{10,11}$").WithMessage("O telefone deve conter entre 10 e 11 dígitos numéricos.");
+                .Matches(@"^\d{10,11}$").WithMessage("O formato do telefone é inválido.");
         }
     }
 }

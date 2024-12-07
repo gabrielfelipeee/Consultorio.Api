@@ -17,6 +17,8 @@ namespace Api.Application
             // Configurações de injeção de dependências
             ConfigureRepoitory.ConfigureDependenciesRepository(builder.Services);
             ConfigureService.ConfigureDependenciesServices(builder.Services);
+            ConfigureAutoMapper.ConfigureDependenciesAutoMapper(builder.Services);
+            ConfigureFluentValidation.ConfigureDependenciesConfigureFluentValidation(builder.Services);
 
             var app = builder.Build();
 

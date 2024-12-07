@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fzcWct0SrSGYYINAqeDeDSL0ULUawsXkz8CPyHrAI6RG3NfQeSYSZqSWRYSfc71DrEv/o9lTvRTfZJar94Y7tA==",
+  "dgSpecHash": "nIAvvjXXcPPWeH299yl2pYMUMZu+m7+gDWRzXJsKxQVgDWmwO110mw4tI2A/di0E460hSMS1sSU/DG4dvNo5tw==",
   "success": true,
   "projectFilePath": "/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/Application.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.aspnetcore.jsonpatch/8.0.0/microsoft.aspnetcore.jsonpatch.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/8.0.0/microsoft.aspnetcore.mvc.newtonsoftjson.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.aspnetcore.openapi/8.0.10/microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",

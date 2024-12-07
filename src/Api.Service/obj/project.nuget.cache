@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "A+dYlBR4FMCbHYurNcuRAPoqZhferSSXyRykrcb33mGLbHoNGmk2IJG6k6XTrMAhw5L9wyQIAOFBueOVv1uZAg==",
+  "dgSpecHash": "nWscqHAUlqQjC5RuZCNmCgbmv4lAbPvKCRuN43XWoRdWghh9ozLEbB48KE6IWuOd9ZMmhChKsASBOvVTTDTvSw==",
   "success": true,
   "projectFilePath": "/home/gabriel/Desktop/Consultorio.Api/src/Api.Service/Service.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore/8.0.0/microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.0/microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.0/microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",

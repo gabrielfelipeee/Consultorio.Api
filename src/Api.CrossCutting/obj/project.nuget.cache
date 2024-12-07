@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lsDJ72+NxqoJhA6xpR1Vb6vG3etYeBIwXiWsxbVbFLNvW+CsQ00DDt8adp/Efy3AYo4jjkBlc7wBqVafkEAnGg==",
+  "dgSpecHash": "M9QqUCj1z7Akw/mQKEPdizYw9N3ENjkB2o0tuzCblw2bP7BaM2/qBrVceViV/7Zgvh6dwA8xabQoWRay37CDSA==",
   "success": true,
   "projectFilePath": "/home/gabriel/Desktop/Consultorio.Api/src/Api.CrossCutting/CrossCutting.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/home/gabriel/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore/8.0.0/microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.0/microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.0/microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",

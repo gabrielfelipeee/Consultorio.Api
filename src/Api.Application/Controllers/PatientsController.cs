@@ -1,5 +1,7 @@
-using Api.Domain.Entities;
+using Api.CrossCutting.Helpers;
+using Api.Domain.Dtos.Patient;
 using Api.Domain.Interfaces.Services;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
@@ -20,12 +22,6 @@ namespace Api.Application.Controllers
             try
             {
                 var result = await _patientService.GetAllAsync();
-
-                if (result == null || !result.Any())
-                {
-                    return Ok(new List<object>());
-                }
-
                 return Ok(result);
             }
             catch (Exception)
@@ -40,13 +36,11 @@ namespace Api.Application.Controllers
             try
             {
                 var result = await _patientService.GetByIdAsync(id);
-
-                if (result == null)
-                {
-                    return NotFound(new { error = "Paciente não encontrado." });
-                }
-
                 return Ok(result);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { error = ex.Message });
             }
             catch (Exception)
             {
@@ -55,13 +49,16 @@ namespace Api.Application.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostPatient(PatientEntity patient)
+        public async Task<ActionResult> PostPatient(PatientCreateDto patient)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
             try
             {
                 var result = await _patientService.PostAsync(patient);
-                return Ok(result);
+                return CreatedAtAction(nameof(GetPatientById), new { id = result.Id }, result);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ValidationErrorFormatter.FormatValidationErrors(ex, "Validation Error"));
             }
             catch (Exception)
             {
@@ -70,17 +67,20 @@ namespace Api.Application.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> PutPatient(PatientEntity patient)
+        public async Task<ActionResult> PutPatient(PatientUpdateDto patient)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
             try
             {
                 var result = await _patientService.PutAsync(patient);
-                if (result == null)
-                {
-                    return NotFound(new { error = "Paciente não encontrado." });
-                }
                 return Ok(result);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { error = ex.Message });
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(ValidationErrorFormatter.FormatValidationErrors(ex, "Validation Error"));
             }
             catch (Exception)
             {
@@ -93,12 +93,12 @@ namespace Api.Application.Controllers
         {
             try
             {
-                var result = await _patientService.DeleteAsync(id);
-                if (!result)
-                {
-                    return NotFound(new { error = "Paciente não encontrado." });
-                }
-                return Ok(result);
+                await _patientService.DeleteAsync(id);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { error = ex.Message });
             }
             catch (Exception)
             {
