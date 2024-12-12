@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nIAvvjXXcPPWeH299yl2pYMUMZu+m7+gDWRzXJsKxQVgDWmwO110mw4tI2A/di0E460hSMS1sSU/DG4dvNo5tw==",
+  "dgSpecHash": "bg788OZ12EfVF35MoUKZTT2xXAYAJX6rCk4vCA0/Mmpj3zdGiFfOFswg2aI7UQ0o46aso0F/XycB6bQw+obVug==",
   "success": true,
   "projectFilePath": "/home/gabriel/Desktop/Consultorio.Api/src/Api.Application/Application.csproj",
   "expectedPackageFiles": [

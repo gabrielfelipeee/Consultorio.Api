@@ -10,7 +10,6 @@
         "dependencies": {
           "CrossCutting": "1.0.0",
           "Domain": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.10",
           "Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
@@ -271,6 +270,7 @@
         "dependencies": {
           "Data": "1.0.0",
           "Domain": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
           "Service": "1.0.0"
         },
         "runtime": {

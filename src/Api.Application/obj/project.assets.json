@@ -522,6 +522,7 @@
         "dependencies": {
           "Data": "1.0.0",
           "Domain": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
           "Service": "1.0.0"
         },
         "compile": {
@@ -1631,7 +1632,6 @@
     "net8.0": [
       "CrossCutting >= 1.0.0",
       "Domain >= 1.0.0",
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 8.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.10",
       "Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -1684,10 +1684,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-            "target": "Package",
-            "version": "[8.0.0, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.10, )"
@@ -1716,7 +1712,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

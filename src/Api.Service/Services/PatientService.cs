@@ -36,11 +36,12 @@ namespace Api.Service.Services
 
         public async Task<PatientDto> GetByIdAsync(int id)
         {
+            if (id <= 0)
+                throw new ArgumentException();
+
             var entity = await _repository.SelectByIdWithAppointmentsAsync(id);
             if (entity == null)
-            {
-                throw new KeyNotFoundException($"Paciente com ID {id} não encontrado.");
-            }
+                throw new KeyNotFoundException();
 
             var dto = _mapper.Map<PatientDto>(entity);
             return dto;
@@ -49,9 +50,7 @@ namespace Api.Service.Services
         {
             var validationResult = await _createValidator.ValidateAsync(patient);
             if (!validationResult.IsValid)
-            {
                 throw new ValidationException(validationResult.Errors);
-            }
 
             var model = _mapper.Map<PatientModel>(patient);
             var entity = _mapper.Map<PatientEntity>(model);
@@ -63,18 +62,13 @@ namespace Api.Service.Services
         }
         public async Task<PatientUpdateResultDto> PutAsync(PatientUpdateDto patient)
         {
-            // Verifica se o paciente existe
             var patientResult = await _repository.SelectByIdAsync(patient.Id);
-            if (patientResult == null || patient.Id <= 0)
-            {
-                throw new KeyNotFoundException($"Paciente com ID {patient.Id} não encontrado.");
-            }
+            if (patientResult == null)
+                throw new KeyNotFoundException();
 
             var validationResult = await _updateValidator.ValidateAsync(patient);
             if (!validationResult.IsValid)
-            {
                 throw new ValidationException(validationResult.Errors);
-            }
 
             var model = _mapper.Map<PatientModel>(patient);
             var entity = _mapper.Map<PatientEntity>(model);
@@ -87,11 +81,13 @@ namespace Api.Service.Services
         }
         public async Task<bool> DeleteAsync(int id)
         {
+            if (id <= 0)
+                throw new ArgumentException();
+
             var result = await _repository.SelectByIdAsync(id);
-            if (result == null || id <= 0)
-            {
-                throw new KeyNotFoundException($"Paciente com ID {id} não encontrado.");
-            }
+            if (result == null)
+                throw new KeyNotFoundException();
+
             return await _repository.DeleteAsync(id);
         }
     }
