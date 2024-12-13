@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.CrossCutting.Middleware.Errors
+namespace Api.Application.Middleware.Errors
 {
     public class CustomProblemDetails : ProblemDetails
     {

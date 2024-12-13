@@ -1,13 +1,10 @@
 using System.Net;
-using Api.CrossCutting.Middleware.Errors;
+using Api.Application.Middleware.Errors;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Api.CrossCutting.Middleware
+namespace Api.Application.Middleware
 {
     public class ControllerExceptionMiddleware
     {
@@ -45,15 +42,15 @@ namespace Api.CrossCutting.Middleware
                     case KeyNotFoundException:
                         statusCode = HttpStatusCode.NotFound;
                         title = "Recurso não encontrado";
-                        detail = isDevelopment
+                        detail = !isDevelopment
                             ? ex.StackTrace ?? ex.Message
-                            : "O recurso solicitado não foi encontrado";
+                            : ex.Message;
                         break;
 
                     case ValidationException validationException:
                         statusCode = HttpStatusCode.BadRequest;
                         title = "Erro de validação";
-                        detail = isDevelopment
+                        detail = !isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : "Um ou mais erros de validação ocorreram";
 
@@ -68,17 +65,17 @@ namespace Api.CrossCutting.Middleware
                     case ArgumentException:
                         statusCode = HttpStatusCode.BadRequest;
                         title = "Argumento inválido";
-                        detail = isDevelopment
+                        detail = !isDevelopment
                             ? ex.StackTrace ?? ex.Message
-                            : "O argumento fornecido é inválido";
+                            : ex.Message;
                         break;
 
                     default:
                         statusCode = HttpStatusCode.InternalServerError;
                         title = "Erro interno do servidor";
-                        detail = isDevelopment
+                        detail = !isDevelopment
                             ? ex.StackTrace ?? ex.Message
-                            : "Ocorreu um erro interno no servidor";
+                            : "Ocorreu um erro inesperado. Tente novamente mais tarde.";
                         break;
                 };
 

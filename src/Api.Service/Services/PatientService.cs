@@ -86,7 +86,7 @@ namespace Api.Service.Services
 
             var result = await _repository.SelectByIdAsync(id);
             if (result == null)
-                throw new KeyNotFoundException();
+                throw new KeyNotFoundException("teste");
 
             return await _repository.DeleteAsync(id);
         }

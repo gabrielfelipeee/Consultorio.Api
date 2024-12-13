@@ -1,5 +1,5 @@
+using Api.Application.Middleware;
 using Api.CrossCutting.DependencyInjection;
-using Api.CrossCutting.Middleware;
 
 namespace Api.Application
 {

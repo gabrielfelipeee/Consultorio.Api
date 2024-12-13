@@ -4,9 +4,9 @@ using AutoMapper;
 
 namespace Api.CrossCutting.Mappings.Patient
 {
-    public class ModelToEntityProfile : Profile
+    public class ModelToEntityPatientProfile : Profile
     {
-        public ModelToEntityProfile()
+        public ModelToEntityPatientProfile()
         {
             CreateMap<PatientModel, PatientEntity>()
                 .ReverseMap();

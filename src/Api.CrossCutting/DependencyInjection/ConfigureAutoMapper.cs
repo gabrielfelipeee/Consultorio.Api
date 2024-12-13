@@ -1,3 +1,4 @@
+using Api.CrossCutting.Mappings.Appointment;
 using Api.CrossCutting.Mappings.Patient;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,9 +13,14 @@ namespace Api.CrossCutting.DependencyInjection
             var config = new MapperConfiguration(config =>
             {
                 // Mapeamento de Patient
-                config.AddProfile(new DtoToModelProfile());
-                config.AddProfile(new EntityToDtoProfile());
-                config.AddProfile(new ModelToEntityProfile());
+                config.AddProfile(new DtoToModelPatientProfile());
+                config.AddProfile(new EntityToDtoPatientProfile());
+                config.AddProfile(new ModelToEntityPatientProfile());
+
+                // Mapeamento de Appointment
+                config.AddProfile(new DtoToModelAppointmentProfile());
+                config.AddProfile(new EntityToDtoAppointmentProfile());
+                config.AddProfile(new ModelToEntityAppointmentProfile());
             });
             IMapper mapper = config.CreateMapper();  // Cria o mapeador
             services.AddSingleton(mapper);  // Registra o mapeador como Singleton

@@ -1,5 +1,4 @@
 using Api.Domain.Dtos.Patient;
-using Api.Domain.Entities;
 
 namespace Api.Domain.Interfaces.Services
 {

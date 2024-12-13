@@ -10,6 +10,8 @@ namespace Api.CrossCutting.DependencyInjection
         {
             // Registra o serviço de paciente com escopo (instância única por requisição)
             services.AddScoped<IPatientService, PatientService>();
+            
+            services.AddScoped<IAppointmentService, AppointmentService>();
         }
     }
 }
