@@ -4,6 +4,7 @@ using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services;
 using Api.Domain.Models;
 using Api.Service.Services.Validations;
+using Api.Service.Shared;
 using AutoMapper;
 
 namespace Api.Service.Services
@@ -12,19 +13,22 @@ namespace Api.Service.Services
     {
         private readonly IRepository<AppointmentEntity> _repository;
         private readonly IMapper _mapper;
-        private readonly AppointmentValidationService _validationService;
         private readonly EntityValidationService<AppointmentEntity> _entityValidationService;
+        private readonly EntityFluentValidationService<AppointmentCreateDto, AppointmentUpdateDto> _entityFluentValidationService;
+        private readonly AppointmentValidationService _appointmentValidationService;
 
         public AppointmentService(
             IRepository<AppointmentEntity> repository,
             IMapper mapper,
-            AppointmentValidationService validationService,
-            EntityValidationService<AppointmentEntity> entityValidationService)
+            EntityValidationService<AppointmentEntity> entityValidationService,
+            EntityFluentValidationService<AppointmentCreateDto, AppointmentUpdateDto> entityFluentValidationService,
+            AppointmentValidationService appointmentValidationService)
         {
             _repository = repository;
             _mapper = mapper;
-            _validationService = validationService;
             _entityValidationService = entityValidationService;
+            _entityFluentValidationService = entityFluentValidationService;
+            _appointmentValidationService = appointmentValidationService;
         }
 
         public async Task<IEnumerable<AppointmentDto>> GetAllAsync()
@@ -36,8 +40,8 @@ namespace Api.Service.Services
 
         public async Task<AppointmentDto> GetByIdAsync(int id)
         {
-            await _entityValidationService.ValidateIdAsync(id);
-            await _entityValidationService.ValidateEntityExistsAsync(id);
+            // Verifica se o ID é válido, e se a entidade existe no DB.
+            await _entityValidationService.ValidateEntityAsync(id);
 
             var entity = await _repository.SelectByIdAsync(id);
             var dto = _mapper.Map<AppointmentDto>(entity);
@@ -46,10 +50,14 @@ namespace Api.Service.Services
 
         public async Task<AppointmentCreateResultDto> PostAsync(AppointmentCreateDto appointment)
         {
+            // Verficação de dados
+            await _entityFluentValidationService.ValidateCreateAsync(appointment);
+
             var model = _mapper.Map<AppointmentModel>(appointment);
             var entity = _mapper.Map<AppointmentEntity>(model);
 
-            await _validationService.ValidateCreateAppointmentAsync(entity);
+            // Verifica se o paciente, profissional e especialidade existem
+            await _appointmentValidationService.ValidateAppointmentDataAsync(entity);
 
             var result = await _repository.InsertAsync(entity);
             var dto = _mapper.Map<AppointmentCreateResultDto>(result);
@@ -58,23 +66,22 @@ namespace Api.Service.Services
 
         public async Task<AppointmentUpdateResultDto> PutAsync(AppointmentUpdateDto appointment)
         {
-            await _entityValidationService.ValidateIdAsync(appointment.Id);
-            await _entityValidationService.ValidateEntityExistsAsync(appointment.Id);
+            await _entityValidationService.ValidateEntityAsync(appointment.Id);
+
+            await _entityFluentValidationService.ValidateUpdateAsync(appointment);
 
             var model = _mapper.Map<AppointmentModel>(appointment);
             var entity = _mapper.Map<AppointmentEntity>(model);
 
-            await _validationService.ValidateUpdateAppointmentAsync(entity);
+            await _appointmentValidationService.ValidateAppointmentDataAsync(entity);
 
             var result = await _repository.UpdateAsync(entity);
-
             var dto = _mapper.Map<AppointmentUpdateResultDto>(result);
             return dto;
         }
         public async Task<bool> DeleteAsync(int id)
         {
-            await _entityValidationService.ValidateIdAsync(id);
-            await _entityValidationService.ValidateEntityExistsAsync(id);
+            await _entityValidationService.ValidateEntityAsync(id);
 
             return await _repository.DeleteAsync(id);
         }

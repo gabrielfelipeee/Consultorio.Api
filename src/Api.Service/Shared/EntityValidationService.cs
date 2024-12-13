@@ -1,7 +1,7 @@
 using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 
-namespace Api.Service.Services.Validations
+namespace Api.Service.Shared
 {
     public class EntityValidationService<T> where T : BaseEntity
     {
@@ -12,17 +12,25 @@ namespace Api.Service.Services.Validations
             _repository = repository;
         }
 
-        public async Task ValidateIdAsync(int id)
+        // Verifica se o id é válido
+        private async Task ValidateIdAsync(int id)
         {
             if (id <= 0)
                 throw new ArgumentException("O ID deve ser maior que 0.");
         }
 
-        public async Task ValidateEntityExistsAsync(int id)
+        // Verifica se a entidade existe
+        private async Task ValidateEntityExistsAsync(int id)
         {
             var entity = await _repository.SelectByIdAsync(id);
             if (entity == null)
                 throw new KeyNotFoundException($"A entidade não existe.");
+        }
+
+        public async Task ValidateEntityAsync(int id)
+        {
+            await ValidateIdAsync(id);
+            await ValidateEntityExistsAsync(id);
         }
     }
 }
