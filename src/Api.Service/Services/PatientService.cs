@@ -1,8 +1,8 @@
 using Api.Domain.Dtos.Patient;
 using Api.Domain.Entities;
-using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services;
 using Api.Domain.Models;
+using Api.Domain.Repository;
 using Api.Service.Shared;
 using AutoMapper;
 
