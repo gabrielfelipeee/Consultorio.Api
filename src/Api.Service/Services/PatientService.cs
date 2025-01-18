@@ -53,16 +53,16 @@ namespace Api.Service.Services
             var dto = _mapper.Map<PatientCreateResultDto>(result);
             return dto;
         }
-        public async Task<PatientUpdateResultDto> PutAsync(PatientUpdateDto patient)
+        public async Task<PatientUpdateResultDto> PutAsync(int id, PatientUpdateDto patient)
         {
-            await _entityValidationService.ValidateEntityAsync(patient.Id);
+            await _entityValidationService.ValidateEntityAsync(id);
 
             await _entityFluentValidationService.ValidateUpdateAsync(patient);
 
             var model = _mapper.Map<PatientModel>(patient);
             var entity = _mapper.Map<PatientEntity>(model);
 
-            var result = await _repository.UpdateAsync(entity);
+            var result = await _repository.UpdateAsync(id, entity);
             var dto = _mapper.Map<PatientUpdateResultDto>(result);
             return dto;
         }

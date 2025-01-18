@@ -64,9 +64,9 @@ namespace Api.Service.Services
             return dto;
         }
 
-        public async Task<AppointmentUpdateResultDto> PutAsync(AppointmentUpdateDto appointment)
+        public async Task<AppointmentUpdateResultDto> PutAsync(int id, AppointmentUpdateDto appointment)
         {
-            await _entityValidationService.ValidateEntityAsync(appointment.Id);
+            await _entityValidationService.ValidateEntityAsync(id);
 
             await _entityFluentValidationService.ValidateUpdateAsync(appointment);
 
@@ -75,7 +75,7 @@ namespace Api.Service.Services
 
             await _appointmentValidationService.ValidateAppointmentDataAsync(entity);
 
-            var result = await _repository.UpdateAsync(entity);
+            var result = await _repository.UpdateAsync(id, entity);
             var dto = _mapper.Map<AppointmentUpdateResultDto>(result);
             return dto;
         }

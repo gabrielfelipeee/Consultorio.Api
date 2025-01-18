@@ -33,10 +33,10 @@ namespace Api.Application.Controllers
             return CreatedAtAction(nameof(GetAppointmentById), new { id = result.Id }, result);
         }
 
-        [HttpPut]
-        public async Task<ActionResult> PutAppointment(AppointmentUpdateDto appointment)
+        [HttpPut("id")]
+        public async Task<ActionResult> PutAppointment(int id, AppointmentUpdateDto appointment)
         {
-            var result = await _appointment.PutAsync(appointment);
+            var result = await _appointment.PutAsync(id, appointment);
             return Ok(result);
         }
 

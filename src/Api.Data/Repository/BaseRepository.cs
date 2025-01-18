@@ -32,14 +32,13 @@ namespace Api.Data.Repository
             await _consultorioContext.SaveChangesAsync();
             return item;
         }
-        public async Task<T> UpdateAsync(T item)
+        public async Task<T> UpdateAsync(int id, T item)
         {
-            var result = await _dataset.FirstOrDefaultAsync(x => x.Id == item.Id);
+            var result = await _dataset.FirstOrDefaultAsync(x => x.Id == id);
             if (result == null)
-            {
                 return null;
-            }
-            item.Id = item.Id;
+
+            item.Id = result.Id;
             item.CreatedAt = item.CreatedAt;
             item.UpdatedAt = DateTime.UtcNow;
 

@@ -7,7 +7,7 @@ namespace Api.Domain.Interfaces.Services
         Task<IEnumerable<AppointmentDto>> GetAllAsync();
         Task<AppointmentDto> GetByIdAsync(int id);
         Task<AppointmentCreateResultDto> PostAsync(AppointmentCreateDto appointment);
-        Task<AppointmentUpdateResultDto> PutAsync(AppointmentUpdateDto appointment);
+        Task<AppointmentUpdateResultDto> PutAsync(int id, AppointmentUpdateDto appointment);
         Task<bool> DeleteAsync(int id);
     }
 }

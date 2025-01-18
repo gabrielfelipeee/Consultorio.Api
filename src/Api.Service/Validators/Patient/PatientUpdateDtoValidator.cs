@@ -1,5 +1,4 @@
 using Api.Domain.Dtos.Patient;
-using FluentValidation;
 
 namespace Api.Service.Validators.Patient
 {
@@ -7,8 +6,6 @@ namespace Api.Service.Validators.Patient
     {
         public PatientUpdateDtoValidator()
         {
-            RuleFor(p => p.Id)
-                .GreaterThan(0).WithMessage("O ID do paciente deve ser maior que 0.");
         }
     }
 }

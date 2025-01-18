@@ -20,7 +20,7 @@ namespace Api.Application
             });
 
             // Configurações de injeção de dependências
-            ConfigureRepoitory.ConfigureDependenciesRepository(builder.Services);
+            ConfigureRepoitory.ConfigureDependenciesRepository(builder.Services, builder.Configuration);
             ConfigureService.ConfigureDependenciesServices(builder.Services);
             ConfigureAutoMapper.ConfigureDependenciesAutoMapper(builder.Services);
             ConfigureFluentValidation.ConfigureDependenciesConfigureFluentValidation(builder.Services);

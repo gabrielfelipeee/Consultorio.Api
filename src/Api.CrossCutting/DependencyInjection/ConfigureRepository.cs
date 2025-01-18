@@ -4,13 +4,14 @@ using Api.Data.Repository;
 using Api.Domain.Interfaces;
 using Api.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Api.CrossCutting.DependencyInjection
 {
     public class ConfigureRepoitory
     {
-        public static void ConfigureDependenciesRepository(IServiceCollection services)
+        public static void ConfigureDependenciesRepository(IServiceCollection services, IConfiguration configuration)
         {
             // Registra o repositório genérico, para que qualquer tipo de entidade possa ser injetado
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
@@ -18,8 +19,7 @@ namespace Api.CrossCutting.DependencyInjection
             services.AddScoped<IPatientRepository, PatientImplementation>();
 
 
-
-            var connectionString = "Server=localhost;Port=3306;Database=consultorio;Uid=root;Pwd=14589632@Gg";
+            var connectionString = configuration.GetConnectionString("Default");
 
             services.AddDbContext<ConsultorioContext>(options =>
             {
